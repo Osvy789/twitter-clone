@@ -8,26 +8,27 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PublishIcon from "@mui/icons-material/Publish";
 
 function Post({ displayName, username, verified, text, image, avatar }) {
+
   return (
     <div className="post">
       <div class="post__avatar">
-        <Avatar />
+        <Avatar src={avatar}/>
       </div>
       <div className="post__body">
         <div class="post__header">
           <div class="post__headerText">
             <h3>
-              Osvy Guti{" "}
+              {displayName}{" "}
               <span className="post__headerSpecial">
-                <VerifiedUserIcon className="post__badge" /> @Osvy
+                {verified && <VerifiedUserIcon className="post__badge"/>} @{username}
               </span>
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>I challenge you to build a twitter clone with react</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img src="" alt="" />
+        <img src={image} alt=""/>
         <div class="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
           <RepeatIcon fontSize="small" />
